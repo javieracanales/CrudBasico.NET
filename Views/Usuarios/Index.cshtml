@@ -1,0 +1,54 @@
+﻿@model List<JavieraCanalesET.Models.UsuarioView>
+@{
+    ViewBag.Title = "Usuarios";
+}
+
+<h2>Usuarios</h2>
+<div class="col-auto">
+
+    <table class="table">
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Apellido
+            </th>
+            <th>
+                Edad
+            </th>
+            <th>
+                Teléfono
+            </th>
+            <th>
+                Dirección
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Nombre
+                </td>
+                <td>
+                    @item.Apellido
+                </td>
+                <td>
+                    @item.Edad
+                </td>
+                <td>
+                    @item.Fono
+                </td>
+                <td>
+                    @item.Direccion
+                </td>
+                <td>
+                    <a class="btn btn-danger" href="~/Usuarios/Eliminar/@item.Id">Eliminar</a>
+                    <a class="btn btn-warning" href="~/Usuarios/Editar/@item.Id">Editar</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
